@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+}
+
+.space {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    grid-template-columns: repeat(64, 1fr);
+    grid-template-rows: repeat(64, 1fr);
+}
+
+.space div {
+    box-sizing: border-box;
+    border: 1px dotted rgba(0, 0, 0, 0.4);
+}

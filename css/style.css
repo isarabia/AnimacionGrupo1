@@ -4,14 +4,59 @@ body {
 
 .space {
     display: grid;
-    width: 100%;
+    background: linear-gradient(180deg, #1a4476, #0c1f36 99%);
+    width: 100vh;
+    margin: 0 auto;
     height: 100vh;
     position: relative;
-    grid-template-columns: repeat(64, 1fr);
-    grid-template-rows: repeat(64, 1fr);
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    overflow: hidden;
 }
 
-.space div {
+.space > div {
+    box-sizing: border-box;
+    /* background-color: white; */
+    border: 1px dotted rgba(0, 0, 0, 0.4);
+}
+
+.star {
+    display:grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    border-color: white!important;
+    animation: starGuardian 6s linear;
+    animation-fill-mode: forwards;
+}
+
+.star > div {
     box-sizing: border-box;
     border: 1px dotted rgba(0, 0, 0, 0.4);
+}
+
+.animated {
+    animation: starLight 1s ease;
+}
+
+@keyframes starGuardian {
+    0% {
+        transform: translateX(500%);
+    }
+    100% {
+        transform: translateX(-500%);
+    }
+}
+
+@keyframes starLight {
+    0% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: transparent;
+    }
 }

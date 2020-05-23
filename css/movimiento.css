@@ -9,6 +9,7 @@
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
+	transition: 5s 0s All linear;
 }
 
 .contenedor-gato {
@@ -18,7 +19,7 @@
 	align-self: center;
     display: flex;
     justify-content: right;
-    animation: myOrbit 4s linear infinite;
+	animation: myOrbit 4s linear infinite;
 }
 
 @keyframes myOrbit {
@@ -120,6 +121,11 @@ img.gato-pierna-izqu-atras {
     width: 30%;
     bottom: 0%;
     left: -10%;
+}
+
+.cayendo
+{
+    Padding-top:100em;
 }
 
 @keyframes paticas {

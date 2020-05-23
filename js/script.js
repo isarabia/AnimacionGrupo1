@@ -103,6 +103,8 @@ function starInterval(a, counter, array) {
     }, counter);
 } 
 
-function despedazar(element) {
-    element.classList.add("rainbow-cayendo");
+function caer(element) {
+    element.classList.add("cayendo");
+    setTimeout(() => {  element.style.display = "none"; }, 3000);
+    
 }

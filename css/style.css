@@ -9,7 +9,7 @@ body {
     margin: 0 auto;
     height: 100vh;
     position: relative;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: 4fr 1fr 4fr;
     grid-template-rows: repeat(9, 1fr);
     overflow: hidden;
     z-index: -10;
@@ -25,18 +25,18 @@ body {
     display:grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(9, 1fr);
-    border-color: transparent!important;
-    animation: starGuardian 6s linear;
-    animation-fill-mode: forwards;
+    /* border-color: transparent!important; */
+    /* border: 1px dotted rgba(255, 255, 255, 0.5); */
 }
 
-.star > div {
+.star div {
     box-sizing: border-box;
-    /* border: 1px dotted rgba(0, 0, 0, 0.4); */
+    grid-area: 5 / 5 / auto/ auto;
+    animation-iteration-count: infinite;
 }
 
 .animated {
-    animation: starLight 1s ease;
+    animation: starGuardian 4s linear infinite;
 }
 
 @keyframes starGuardian {

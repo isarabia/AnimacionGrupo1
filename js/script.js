@@ -196,6 +196,7 @@ function divCreation(father){
     counter++;
 }
 
+// <<<<<<< HEAD
 function randomize(){
         var min=0; 
         var max=8;  
@@ -203,3 +204,20 @@ function randomize(){
         console.log(number);
         return number;
     }
+// =======
+function starInterval(a, counter, array) {
+    var index = array[a];
+    // console.log(index);
+    setTimeout(function(){
+        for(i = 0; i < index.length; i++){
+            index[i].classList.add("animated");
+        }
+    }, counter);
+} 
+
+function caer(element) {
+    element.classList.add("cayendo");
+    setTimeout(() => {  element.style.display = "none"; }, 3000);
+    
+}
+// >>>>>>> adad2634e4930385dfcbd9526c3e466791f433ca

@@ -9,6 +9,7 @@
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
+	transition: 5s 0s All linear;
 }
 
 .contenedor-gato {
@@ -18,12 +19,23 @@
 	align-self: center;
     display: flex;
     justify-content: right;
-    animation: myOrbit 4s linear infinite;
+	animation: myOrbit 4s linear infinite;
 }
 
 @keyframes myOrbit {
     from { transform: rotate(0deg) translateX(100%) rotate(0deg); }
     to   { transform: rotate(360deg) translateX(100%) rotate(-360deg); }
+}
+
+.contenedor-gato-cayendo {
+	width: 25%;
+	height: 25%;
+	position: absolute;
+	top: 50%;
+	left: 18%;
+	transform: translate(-50%,-50%);
+	animation: caida 1s linear infinite;
+
 }
 
 .contenedor-gato img {
@@ -33,6 +45,13 @@
 }
 
 /* partes del gato */
+
+.rainbow-cayendo {
+	left: -40%;
+	top: 5%;
+	height: 120%;
+	animation: caida 1s linear infinite;
+}
 
 .gato-pierna-izqu-frente{
 	width: 100%;
@@ -102,6 +121,11 @@ img.gato-pierna-izqu-atras {
     width: 30%;
     bottom: 0%;
     left: -10%;
+}
+
+.cayendo
+{
+    Padding-top:100em;
 }
 
 @keyframes paticas {

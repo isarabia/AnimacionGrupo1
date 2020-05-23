@@ -12,6 +12,7 @@ body {
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(9, 1fr);
     overflow: hidden;
+    z-index: -10;
 }
 
 .space > div {

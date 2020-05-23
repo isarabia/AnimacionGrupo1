@@ -3,7 +3,6 @@ var used = new Array();
 
 divCreate(odyn);
 var allFatherGrid = odyn.childNodes;
-// console.log(allFatherGrid);
 allFatherGrid.forEach(ele => divCreate(ele));
 
 // startCreate();

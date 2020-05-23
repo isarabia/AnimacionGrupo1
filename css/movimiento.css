@@ -7,17 +7,23 @@
 	left: 50%;
 	transform: translate(-50%,-50%);
 	overflow: hidden;
+	display: flex;
+	justify-content: center;
 }
 
 .contenedor-gato {
 	width: 25%;
 	height: 25%;
-	position: absolute;
-	top: 50%;
-	left: 18%;
-	transform: translate(-50%,-50%);
-	animation: iddle 1s linear infinite;
+	/* position: absolute; */
+	align-self: center;
+    display: flex;
+    justify-content: right;
+    animation: myOrbit 4s linear infinite;
+}
 
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(100%) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(100%) rotate(-360deg); }
 }
 
 .contenedor-gato-cayendo {
@@ -33,19 +39,11 @@
 
 .contenedor-gato img {
 	position: absolute;
-	width: 200%;
+    width: 100%;
+    align-self: center;
 }
 
-.contenedor-gato-cayendo img {
-	position: absolute;
-	width: 200%;
-}
-
-.gato-rainbow {
-	left: -40%;
-	top: 5%;
-	height: 120%;
-}
+/* partes del gato */
 
 .rainbow-cayendo {
 	left: -40%;
@@ -55,50 +53,110 @@
 }
 
 .gato-pierna-izqu-frente{
-	transform-origin: 80% 80%;
-	transform: rotate(30deg);
+	width: 100%;
 }
 
-@keyframes caida {
-    0% {
-        transform: translate(-50%, -50%);
-    }
+.arcoiris {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 10%;
+    left: -90%;
+}
 
-    25% {
-        transform: translate(-40%, -40%);
+.arcoiris img:nth-child(2){
+    left: -100%;
+}
+
+.arcoiris img:nth-child(3){
+    left: -200%;
+}
+
+.arcoiris img:nth-child(4){
+    left: -300%;
+}
+
+.arcoiris {
+    animation: arcoiris 2.5s linear infinite;
+}
+
+img.gato-cabeza {
+    width: 75%;
+    right: -25%;
+}
+
+img.gato-cola {
+    bottom: 30%;
+    left: -30%;
+    width: 45%;
+    animation: cola 1s linear infinite;
+}
+
+[class^="gato-pierna-"]{
+    animation: paticas 1s linear infinite;
+}
+
+img.gato-pierna-drch-frente {
+    width: 30%;
+    bottom: -5%;
+    right: 15%;
+    animation-delay: .5s;
+}
+
+img.gato-pierna-izqu-frente {
+    width: 30%;
+    bottom: -5%;
+    right: -10%;
+}
+
+img.gato-pierna-drch-atras {
+    width: 30%;
+    bottom: -5%;
+    left: 10%;
+    animation-delay: .5s;
+}
+
+img.gato-pierna-izqu-atras {
+    width: 30%;
+    bottom: 0%;
+    left: -10%;
+}
+
+@keyframes paticas {
+    0% {
+        transform: translateX(0) rotate(0);
     }
 
     50% {
-        transform: translate(-30%, -50%);
+        transform: translateX(-20%) rotate(30deg);
     }
 
-    75% {
-        transform: translate(-40%, -60%);
+    0% {
+        transform: translateX(0) rotate(0);
     }
 
-    100% {
-        transform: translate(-50%, -50%);
-    }
 }
 
-@keyframes iddle {
+@keyframes cola {
     0% {
-        transform: translate(-50%, -50%);
-    }
-
-    25% {
-        transform: translate(-40%, -40%);
+        transform: translateY(0) rotate(0);
     }
 
     50% {
-        transform: translate(-30%, -50%);
+        transform: translateY(-35%) rotate(30deg);
     }
 
-    75% {
-        transform: translate(-40%, -60%);
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+@keyframes arcoiris {
+    0% {
+        transform: translateX(50%);
     }
 
     100% {
-        transform: translate(-50%, -50%);
+        transform: translateX(0);
     }
 }

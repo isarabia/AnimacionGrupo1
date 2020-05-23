@@ -17,21 +17,21 @@ body {
 .space > div {
     box-sizing: border-box;
     /* background-color: white; */
-    border: 1px dotted rgba(0, 0, 0, 0.4);
+    /* border: 1px dotted rgba(0, 0, 0, 0.4); */
 }
 
 .star {
     display:grid;
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(9, 1fr);
-    border-color: white!important;
+    border-color: transparent!important;
     animation: starGuardian 6s linear;
     animation-fill-mode: forwards;
 }
 
 .star > div {
     box-sizing: border-box;
-    border: 1px dotted rgba(0, 0, 0, 0.4);
+    /* border: 1px dotted rgba(0, 0, 0, 0.4); */
 }
 
 .animated {

@@ -103,3 +103,7 @@ function starInterval(a, counter, array) {
         }
     }, counter);
 } 
+
+function despedazar(element) {
+    element.classList.add("rainbow-cayendo");
+}

@@ -20,7 +20,23 @@
 
 }
 
+.contenedor-gato-cayendo {
+	width: 25%;
+	height: 25%;
+	position: absolute;
+	top: 50%;
+	left: 18%;
+	transform: translate(-50%,-50%);
+	animation: caida 1s linear infinite;
+
+}
+
 .contenedor-gato img {
+	position: absolute;
+	width: 200%;
+}
+
+.contenedor-gato-cayendo img {
 	position: absolute;
 	width: 200%;
 }
@@ -31,9 +47,38 @@
 	height: 120%;
 }
 
+.rainbow-cayendo {
+	left: -40%;
+	top: 5%;
+	height: 120%;
+	animation: caida 1s linear infinite;
+}
+
 .gato-pierna-izqu-frente{
 	transform-origin: 80% 80%;
 	transform: rotate(30deg);
+}
+
+@keyframes caida {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+
+    25% {
+        transform: translate(-40%, -40%);
+    }
+
+    50% {
+        transform: translate(-30%, -50%);
+    }
+
+    75% {
+        transform: translate(-40%, -60%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+    }
 }
 
 @keyframes iddle {

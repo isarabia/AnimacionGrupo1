@@ -1,14 +1,3 @@
-.gato-animacion {
-	width: 800px;
-	height: 600px;
-	background: url('images/background.png') top left no-repeat;
-	border-radius: 30px;
-	margin: 0 auto;
-	margin-top: 10px;
-	position: relative;
-	overflow: hidden;
-}
-
 .gato {
     width: 100vh;
     margin: 0 auto;
@@ -27,137 +16,44 @@
 	top: 50%;
 	left: 18%;
 	transform: translate(-50%,-50%);
+	animation: iddle 1s linear infinite;
+
 }
 
 .contenedor-gato img {
+	position: absolute;
 	width: 200%;
 }
 
-.gato-cabeza {
-	position: absolute;
-
-}
-
 .gato-rainbow {
-	position: absolute;
 	left: -40%;
 	top: 5%;
 	height: 120%;
-	
-}
-
-.estrellas-lejos{
-	position: absolute;
-/* 	left: -10px;
-	top: 30px; */
-	
-	        animation: rocks-far 16s linear 0 infinite;
-}
-
-.estrellas-cerca {
-	position: absolute;
-/* 	left: -10px;
-	top: 180px; */
-	
-	        animation: rocks-near 8s linear 0 infinite;
-}
-
-.gato-pierna-izqu-atras{
-	position: absolute;
-/* 	left: 240px;
-	top: 370px; */
 }
 
 .gato-pierna-izqu-frente{
-	position: absolute;
 	transform-origin: 80% 80%;
 	transform: rotate(30deg);
-/* 	left: 480px;
-	top: 370px; */
 }
 
-.gato-cuerpo {
-	position: absolute;
-/* 	left: 160px;
-	top: 245px; */
-	animation: monster-body 0.25s linear 0 infinite alternate;
-}
+@keyframes iddle {
+    0% {
+        transform: translate(-50%, -50%);
+    }
 
-.gato-cola {
-	position: absolute;
-/* 	left: 130px;
-	top: 262px; */
-}
+    25% {
+        transform: translate(-40%, -40%);
+    }
 
-.gato-oreja {
-	position: absolute;
-/* 	left: 460px;
-	top: 200px; */
-}
+    50% {
+        transform: translate(-30%, -50%);
+    }
 
-.gato-pierna-drch-atras{
-	position: absolute;
-/* 	left: 200px;
-	top: 380px; */
-}
+    75% {
+        transform: translate(-40%, -60%);
+    }
 
-.gato-pierna-drch-frente{
-	position: absolute;
-/* 	left: 440px;
-	top: 380px; */
-}
-
-.gato-pierna-drch-frente, 
-.gato-pierna-izqu-atras{
-	
-	        animation: legs1 0.5s linear 0  alternate;
-}
-
-.gato-pierna-izqu-atras, 
-.gato-pierna-drch-atras{
-	
-	        animation: legs2 0.5s linear 0 infinite alternate;
-}
-
-.gato-cola , 
-.gato-oreja {
-	
-	        animation: ear-tail 0.25s linear 0 infinite alternate;
-}
-
-/* ANIMATIONS --------------------------------------------------------------- */
-@keyframes legs1 {
-	from { transform: rotate(-10deg); }
-	to { transform: rotate(10deg); }
-}
-
-
-@keyframes legs2 {
-	from { transform: rotate(10deg); }
-	to { transform: rotate(-10deg); }
-}
-
-
-@keyframes gato-cola{
-	from { transform: translateY(0px); }
-	to { transform: translateY(10px); }
-}
-
-
-@keyframes oreja-cola {
-	from { transform: translateY(0px) rotate(-5deg); }
-	to { transform: translateY(10px) rotate(5deg);  }
-}
-
-
-@keyframes estrellas-lejos{
-	from { transform: translateX(0px); }
-	to { transform: translateX(-1120px); }
-}
-
-
-@keyframes estrellas-cerca {
-	from { transform: translateX(0px); }
-	to { transform: translateX(-1189px); }
-
+    100% {
+        transform: translate(-50%, -50%);
+    }
 }

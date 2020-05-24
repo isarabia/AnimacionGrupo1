@@ -1,29 +1,67 @@
+
+/* lo primero: lo siento por las faltas de ortografia, poneos gotitas en los ojos o algo que se vienen curvas. */
+
 .gato {
+    /* esto es para que ocupe el 100% de la altura de la pantalla, haciendo un cuadrado que no se salga hacia los lados y sea responsive */
     width: 100vh;
+    height: 100vh;
+    /* esto es para centrarlo, pero no vale de nada aqui */
     margin: 0 auto;
-	height: 100vh;
-	position: absolute;
+    /* esto es para que este encima de space */
+    position: absolute;
+    /* esto hace que el contenedor este centrado en el medio a lo ancho y a lo alto */
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
-	overflow: hidden;
-	display: flex;
-	justify-content: center;
+    transform: translate(-50%,-50%);
+    /* esto es para que no se salga del cuadro el gato */
+    overflow: hidden;
+    /* esto es para centrar el gato en el cuadro */
+    display: flex;
+    /* esto alinea todo el contenido de manera horizontal */
+    justify-content: center;
+    /* -- */
 	transition: 5s 0s All linear;
 }
 
 .contenedor-gato {
+    /* este es el contenedor de las piezas del gato: sirve para mover todas las piezas del gato a la vez */
+    /* ocupa un 4o del cuadrado */
 	width: 25%;
-	height: 25%;
-	/* position: absolute; */
-	align-self: center;
+    height: 25%;
+    /* esto lo alinea verticalmente dentro del flex */
+    align-self: center;
+    /* esto es para colocar las piezas del gato */
     display: flex;
+    /* para alinear horizontalmente todo hacia la izquierda */
     justify-content: right;
+    /* animacion es un shorthand: primer el nombre del keyframes (myOrbit), luego cuanto va a durar la animacion (4s), luego la curva de velocidad "timing-function": para hacer que la animacion se ralentize un poco al principio o al final pondriamos (ease/ease-in/ease-out/ease-in-out) pero como queremos que mantenga la misma velocidad todo el rato le ponemos (linear), luego el numero de ciclos que se repite "iteration-count": podriamos poner que se repita un numero de veces (3 por ejemplo) pero queremos que sea un buvle infinito (infinite). */
 	animation: myOrbit 4s linear infinite;
 }
 
+
+/* esto es la animacion en si: es como si le aplicases los atributos que hay dentro de las llaves (si le pones background: red; tendra este atributo)
+en "from" pones como quieres que sean los atributos al empezar la animacion (el punto de inicio) y en "to" le pones como quieres que acaben.
+en vez de "from" y "to" puedes poner los porcentajes del tiempo en los que los atributos cambian:
+EJEMPLO: si quieres que comience con un fondo blanco y termine con un fondo azul y acabe en un fondo rojo:
+//primero "@keyframes" y el nombre que quieras ponerle
+@keygframes fondo {
+    //si la animacion va a durar 2s 0% es el primer frame, 50% es el segundo 1 y 100% es el segundo 2
+    0% {
+        background-color: white;
+    }
+    50% {
+        background-color: blue;
+    }
+    100% {
+        background-color: red;
+    }
+}
+y ahora le pondrias el atributo: "animation: fondo 2s" a lo que quieres animar.
+     */
 @keyframes myOrbit {
+    /* esta animacion es un copy-paste descarado que hice y no se muy como funciona el 2º rotate, pero lo que hace es que el gatito de circulos dentro del cuadrado */
     from { transform: rotate(0deg) translateX(100%) rotate(0deg); }
+    /* lo que hace (creo) es mover el gato hacia la derecha (si el gato se mueve en un circulo esto seria el radio del circulo), luego rotarlo alrededor del centro para hacer el circulo mientras rota el gato en si para dar la impresión de que el gato no rote sino que mire hacia delante todo el rato */
     to   { transform: rotate(360deg) translateX(100%) rotate(-360deg); }
 }
 
@@ -38,18 +76,21 @@
 
 }
 
+/* esto afecta a todas las partes del gatito */
 .contenedor-gato img {
+    /* todas las partes del gato estan fijadas respecto al contenedor, tienen una anchura base de 100% (que luego he modificado en cada una asi que es irrelevante) */
 	position: absolute;
     width: 100%;
+    /* esto centra verticalmente en un flex */
     align-self: center;
 }
 
 /* partes del gato */
-
+/* cada parte del gato esta posicionada con (top / left / right / bottom) y tienen una anchura para que no sean enormes */
 .rainbow-cayendo {
 	left: -40%;
 	top: 5%;
-	height: 120%;
+    height: 120%;
 	animation: caida 1s linear infinite;
 }
 
@@ -57,6 +98,7 @@
 	width: 100%;
 }
 
+/* esto es un contenedor que hice para crear un arcoiris muy largo */
 .arcoiris {
     width: 100%;
     height: 100%;
@@ -65,6 +107,7 @@
     left: -90%;
 }
 
+/* a cada arcoiris le he puesto que este al lado del anterior pegado, dando la ilusion de hacer un arcoiris muy largo */
 .arcoiris img:nth-child(2){
     left: -100%;
 }
@@ -77,9 +120,11 @@
     left: -300%;
 }
 
+/* le puse esta animacion al contenedor donde estan los arcoiris para moverlos todos a la vez */
 .arcoiris {
     animation: arcoiris 2.5s linear infinite;
 }
+
 
 img.gato-cabeza {
     width: 75%;
@@ -90,10 +135,13 @@ img.gato-cola {
     bottom: 30%;
     left: -30%;
     width: 45%;
+    /* esta animacion es para hacer que la cola vaya de arriba a abajo */
     animation: cola 1s linear infinite;
 }
 
+/* con esto seleccionamos todas las piernas a la vez y le aplicamos la misma animacion a cada una indemendientemente */
 [class^="gato-pierna-"]{
+    /* esta animacion hace que las patitas se muevan un poco de alante hacia atras */
     animation: paticas 1s linear infinite;
 }
 
@@ -101,6 +149,7 @@ img.gato-pierna-drch-frente {
     width: 30%;
     bottom: -5%;
     right: 15%;
+    /* animation delay hace que la animacion empiece despues de x (en este caso medio segundo) y la puse para que las patas tengan una ligera desincronizacion y diesen la impresion de caminar, podeis probar a quitarlo para que veais lo que hace */
     animation-delay: .5s;
 }
 
@@ -114,6 +163,7 @@ img.gato-pierna-drch-atras {
     width: 30%;
     bottom: -5%;
     left: 10%;
+    /* animation delay hace que la animacion empiece despues de x (en este caso medio segundo) y la puse para que las patas tengan una ligera desincronizacion y diesen la impresion de caminar, podeis probar a quitarlo para que veais lo que hace */
     animation-delay: .5s;
 }
 
@@ -128,41 +178,56 @@ img.gato-pierna-izqu-atras {
     Padding-top:100em;
 }
 
+/* aqui empiezan las animaciones en si */
+/* esta animacion hace que las patas se muevan un poco de alante hacia atras mientras giran ligeramente */
 @keyframes paticas {
     0% {
+        /* empiezan en su posicion normal (0 ambas) */
         transform: translateX(0) rotate(0);
     }
 
     50% {
+        /* se mueven un poco hacia atras + rotan un poco, si no hiciese que se muevan un poco hacia atras el giro es muy brusco y queda mal.
+        probad a poner el translateX en 0 para verlo */
         transform: translateX(-20%) rotate(30deg);
     }
 
-    0% {
+    100% {
+        /* termina en su posicion inicial (0 ambas) */
         transform: translateX(0) rotate(0);
     }
 
 }
 
+/* esta animacion es como la de la cola pero en vez de moverse un poco hacia alante se mueve un poco hacia abajo, por el mismo motivo */
 @keyframes cola {
     0% {
+        /* empiezan en su posicion normal (0 ambas) */
         transform: translateY(0) rotate(0);
     }
 
     50% {
+        /* se mueven un poco hacia abajo + rotan un poco, si no hiciese que se muevan un poco hacia abajo el giro es muy brusco y queda mal.
+        probad a poner el translateY en 0 para verlo */
         transform: translateY(-35%) rotate(30deg);
     }
 
-    0% {
+    100% {
+        /* termina en su posicion inicial (0 ambas) */
         transform: translateY(0) rotate(0);
     }
 }
 
+/* el movimiento del arcoiris hace que se mueva un poco hacia atras y luego aparezca donde estaba al principio volviendo a moverse hacia atras en un bucle, dando la impresion de ondulacion */
 @keyframes arcoiris {
     0% {
+        /* empieza movido hacia delante */
         transform: translateX(50%);
     }
 
     100% {
+        /* acaba "movido hacia atras" (en este caso como empezo delante moverlo hacia atras es acabar en su punto 0)
+        como acaba de manera diferente a como inicio, al hacer un bucle hace un salto brusco, pero como no se ven ni el principio ni el final del arcoiris no se nota y parece que se mueve continuamente hacia atras */
         transform: translateX(0);
     }
 }
